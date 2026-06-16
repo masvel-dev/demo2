@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   anchor()
   scrollToTop()
   mobileNav()
+  videoPlay()
   initCounter()
   initSlider()
 })
@@ -71,6 +72,18 @@ function mobileNav() {
 
   updateNavTransition()
   window.addEventListener('resize', updateNavTransition)
+}
+
+function videoPlay() {
+  const video = document.querySelector('.section-1 video');
+  if (!video) return
+
+  video.muted = true;
+  video.playsInline = true;
+
+  video.addEventListener('canplay', () => {
+    video.play().catch(() => {});
+  });
 }
 
 // =====================================================
