@@ -822,14 +822,21 @@ ul {
   min-height: 100dvh;
   background-color: var(--color-primary);
 
-  video {
+  .video-wrap {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     opacity: 0;
     transition: opacity var(--animation-time) ease;
+
+    video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .overlay {
@@ -1206,7 +1213,7 @@ ul {
 
 .loaded {
   .header,
-  .section-1 video,
+  .section-1 .video-wrap,
   .section-1 .content .btn-wrap {
     opacity: 1;
   }
